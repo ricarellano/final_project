@@ -1,4 +1,4 @@
 <h1>Hello!!</h1>
-<% @nokogiri.each do | img| %>
-  <%= image_tag (img) %>
+<% @img_array.each do |img| %>
+  <img src="<%= img %>" alt="">
 <%end%>
