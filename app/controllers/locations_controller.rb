@@ -1,9 +1,13 @@
 class LocationsController < ApplicationController
 skip_before_filter :verify_authenticity_token
+require 'strava/api/v3'
+
+@client = Strava::Api::V3::Client.new(:access_token => "df59fec7116ab07f292dbd7440876924d54685c3")
   def index
     @location = Location.last
     @destination = Destination.last
-  
+    # @distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@destination.latitude,@destination.longitude])
+    # binding.pry
 
     # @location = Location.find_by_id(params[:id])
   #   @hash = Gmaps4rails.build_markers(@location, @destination) do | location, destination, marker|

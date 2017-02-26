@@ -3,6 +3,11 @@
 </div>
 
 
+<div class="">
+  <p><%= @distance %></p>
+
+</div>
+
 
 <script type="text/javascript">
 var directionsDisplay = new google.maps.DirectionsRenderer();
@@ -28,5 +33,6 @@ calcRoute();
 var handler = Gmaps.build('Google');
 handler.buildMap({ internal: {id: 'directions'}}, function(){
   directionsDisplay.setMap(handler.getMap());
+  @distance = Geocoder::Calculations.distance_between([origin], destination])
 });
 </script>
