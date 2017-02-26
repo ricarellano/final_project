@@ -6,7 +6,7 @@ require 'strava/api/v3'
   def index
     @location = Location.last
     @destination = Destination.last
-    # @distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@destination.latitude,@destination.longitude])
+    @distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@destination.latitude,@destination.longitude])
     # binding.pry
 
     # @location = Location.find_by_id(params[:id])
