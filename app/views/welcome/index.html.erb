@@ -1,0 +1,30 @@
+
+<div class="container">
+ <div class="row">
+   <br>
+   <br>
+   <div class="col s6 offset-s3">
+
+     <h4>Where you going?</h4>
+
+     <%= form_for @location do |f| %>
+       <div>
+         <%= f.text_field :address, placeholder: " Where", id:"form" %>
+       </div>
+       <%= form_for  @destination do |f| %>
+
+         <div>
+           <%= f.text_field :address2, placeholder: " To", id:"form" %>
+         </div>
+
+       <div class="col s6 push-s4">
+         <a class="waves-effect waves-light btn"><%= f.submit "submit" %></a>
+       </div>
+     <% end %>
+     <% end %>
+
+
+
+   </div>
+ </div>
+</div>

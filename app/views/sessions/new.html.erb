@@ -1,0 +1,25 @@
+<!-- USER LOGIN PAGE -->
+<div>
+   <div class="container">
+    <div class="row">
+      <br>
+      <br>
+      <div class="col s6 offset-s3">
+
+        <h4 id="signupheader">Login</h4>
+
+        <%= form_for @user, url: "/sessions", method: "post" do |f| %>
+          <div>
+            <%= f.email_field :email, placeholder: " Email", id:"form" %>
+          </div>
+          <div>
+            <%= f.password_field :password, placeholder: " Password", id:"form" %>
+          </div>
+          <div class="col s6 push-s4">
+            <a class="waves-effect waves-light btn" id="signupbutton"><%= f.submit "Log In" %></a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

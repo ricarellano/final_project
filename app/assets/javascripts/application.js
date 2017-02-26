@@ -17,3 +17,4 @@
 //= require gmaps/google
 //= require maps
 //= require_tree .
+//= require materialize

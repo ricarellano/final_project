@@ -10,19 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225185548) do
+ActiveRecord::Schema.define(version: 20170226052436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "maps", force: :cascade do |t|
+  create_table "destinations", force: :cascade do |t|
+    t.string   "address2"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.integer  "location_id"
+    t.index ["location_id"], name: "index_destinations_on_location_id", using: :btree
+    t.index ["user_id"], name: "index_destinations_on_user_id", using: :btree
+  end
+
+  create_table "locations", force: :cascade do |t|
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
-    t.index ["user_id"], name: "index_maps_on_user_id", using: :btree
+    t.index ["user_id"], name: "index_locations_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,7 +44,10 @@ ActiveRecord::Schema.define(version: 20170225185548) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "user_name"
   end
 
-  add_foreign_key "maps", "users"
+  add_foreign_key "destinations", "locations"
+  add_foreign_key "destinations", "users"
+  add_foreign_key "locations", "users"
 end
