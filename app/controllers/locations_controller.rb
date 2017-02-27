@@ -26,6 +26,7 @@ require 'strava/api/v3'
   def create
     @location = Location.create(location_params)
     @location = Destination.create(destination_params)
+    @location.save
     redirect_to locations_path
   end
 
@@ -37,9 +38,9 @@ require 'strava/api/v3'
   private
 
  def location_params
-   params.require(:location).permit(:address)
+   params.require(:location).permit(:address, :user_id)
  end
  def destination_params
-   params.require(:destination).permit(:address2)
+   params.require(:destination).permit(:address2, :user_id)
  end
 end

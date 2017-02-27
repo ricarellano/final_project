@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @location = Location.find_by_id(params[:id])
+    @destination = Destination.find_by_id(params[:id])
   end
 
   def new
