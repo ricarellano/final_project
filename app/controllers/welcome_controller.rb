@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
+      @user = current_user
       @location = Location.new
       @destination = Destination.new
 

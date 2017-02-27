@@ -1,6 +1,6 @@
 <!-- User Profile page -->
 <div class="container">
-  <h4>Welcome, <%= @user.user_name %>!</h4>
+  <h4>Welcome, <%= @user.first_name %>!</h4>
   <hr>
   <div class="row ">
     <div class="col m4 profile">
@@ -9,11 +9,19 @@
       <li><strong>Member Since:</strong> &nbsp; <%= @user.created_at.strftime("%b %d, %Y") %></li>
     </ul>
 
+
+
+
+
     <% if current_user == @user %>
     <p class="left-align"><%= link_to "edit ",  edit_user_path(@user), :class => 'waves-effect waves-light btn ' %></p>
     <% end %>
 
     </div>
   </div>
-</div
+
+
+  <div>
+    <p><%= link_to "Route", direction_path(@location)%></p>
+  </div
   <hr>
