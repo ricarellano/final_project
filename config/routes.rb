@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/locations' => 'locations#index', as: 'locations'
   post '/destinations' => 'destinations#create'
   post '/locations' => 'locations#create'
+  delete '/locations/:id' => 'locations#destroy'
+  delete '/destinations/:id' => 'destinations#destroy'
 
   get '/directions/:id'  => 'directions#show', as: 'direction'
 

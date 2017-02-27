@@ -25,16 +25,21 @@ require 'strava/api/v3'
 
   def create
     @location = Location.create(location_params)
-    @location = Destination.create(destination_params)
+    @destination = Destination.create(destination_params)
+    @location.destination = @destination
     @location.save
     redirect_to locations_path
   end
 
-  def new
-    @location = Location.new
 
-  end
 
+
+  def destroy
+  @location = Location.find_by_id(params[:id])
+  @location = Destination.find_by_id(params[:id]).location
+  @location.destroy
+  redirect_to current_user
+end
   private
 
  def location_params

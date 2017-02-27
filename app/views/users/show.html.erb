@@ -24,8 +24,11 @@
   <% @user.locations.each do |p| %>
     <div class="row">
       <div class="col s10 offset-s1">
-        <h4><%= link_to "#{p.address}", locations_path%></h4>
+          <h4><%= link_to "#{p.address}", direction_path%></h4>
         <p><%=p.created_at.strftime("%b %d, %Y")%></p>
+      </div>
+      <div >
+          <%= link_to "delete", locations_path(@locations), method: :delete, data: { confirm: "Are you sure?" }, :class => 'waves-effect waves-light btn red delete' %></p>
       </div>
     </div>
     <hr>
