@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post '/destinations' => 'destinations#create'
   post '/locations' => 'locations#create'
 
+  get '/directions/:id'  => 'directions#show', as: 'direction'
+
   get '/users' => 'users#index', as: 'users'
   get '/users/new' => 'users#new', as: 'new_user'
   post '/users' => 'users#create'

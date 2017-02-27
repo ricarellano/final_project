@@ -1,8 +1,8 @@
 class LocationsController < ApplicationController
 skip_before_filter :verify_authenticity_token
 require 'strava/api/v3'
-
 @client = Strava::Api::V3::Client.new(:access_token => "df59fec7116ab07f292dbd7440876924d54685c3")
+
   def index
     @location = Location.last
     @destination = Destination.last
