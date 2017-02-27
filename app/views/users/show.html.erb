@@ -21,7 +21,12 @@
   </div>
 
 
-  <div>
-    <p><%= link_to "Route", direction_path(@location)%></p>
-  </div
-  <hr>
+  <% @user.locations.each do |p| %>
+    <div class="row">
+      <div class="col s10 offset-s1">
+        <h4><%= link_to "#{p.address}", locations_path%></h4>
+        <p><%=p.created_at.strftime("%b %d, %Y")%></p>
+      </div>
+    </div>
+    <hr>
+    <% end %>
