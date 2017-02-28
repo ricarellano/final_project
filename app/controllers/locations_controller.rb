@@ -5,19 +5,30 @@ require 'strava/api/v3'
 
   def index
     @location = Location.last
-    @distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@location.lat,@location.lon])
+    # cal_distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@location.lat,@location.lon])
+    # @distance = cal_distance.round(1)
 
   end
 
 
+   def add_user
+    @user = User.find_by_id(params[:id])
+    @location = Location.find_by_id(params[:id])
+
+   end
+
     def show
       @location = Location.find_by_id(params[:id])
+      # cal_distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@location.lat,@location.lon])
+      # @distance = cal_distance.round(1)
     end
 
 
     def create
       @location = Location.new(location_params)
       if @location.save
+        @location.distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@location.lat,@location.lon])
+         @location.save
         redirect_to locations_path
       else
         redirect_to root_path

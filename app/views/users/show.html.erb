@@ -24,11 +24,11 @@
   <% @user.locations.each do |p| %>
     <div class="row">
       <div class="col s10 offset-s1">
-          <h6><%= link_to " #{p.location}", location_path(p) %></h6>
         <p><%=p.created_at.strftime("%b %d, %Y")%></p>
+        <p><strong>From: <%= "#{p.location}" %></strong><strong> To: <%= "#{p.destination}" %></strong> <span><%="#{p.distance} Miles"%></span> <spam><%= link_to "   Route", location_path(p) %></spam>
       </div>
       <div >
-          <%= link_to "delete", location_path(p), method: :delete, :class => 'waves-effect waves-light btn red delete' %></p>
+        <%= link_to "delete", location_path(p), method: :delete, :class => 'waves-effect waves-light btn red delete' %></p>
       </div>
     </div>
     <hr>

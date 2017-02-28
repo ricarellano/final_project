@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/locations' => 'locations#index', as: 'locations'
   post '/locations' => 'locations#create'
+  post '/locations/:id' => 'locations#add_user', as: 'add_user'
   get '/locations/:id'  => 'locations#show', as: 'location'
   delete '/locations/:id' => 'locations#destroy'
 

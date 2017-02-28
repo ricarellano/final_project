@@ -10,4 +10,10 @@ class Location < ApplicationRecord
     self.lat , self.lon = Geocoder.coordinates(self.destination)
   end
 
+  # def self.cal_dist(location)
+  #   location.distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@location.lat,@location.lon])
+  #   location.distance = round(1)
+  #   location.save
+  # end
+
 end
