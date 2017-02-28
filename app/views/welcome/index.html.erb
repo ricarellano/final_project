@@ -9,21 +9,18 @@
 
      <%= form_for @location do |f| %>
        <div>
-         <%= f.text_field :address, placeholder: " From", id:"form" %>
+         <%= f.text_field :location, placeholder: " From", id:"form" %>
          <%= f.hidden_field :user_id, :value => @user.id %>
-
        </div>
-       <%= form_for  @destination do |f| %>
+
 
          <div>
-           <%= f.text_field :address2, placeholder: " To", id:"form" %>
-           <%= f.hidden_field :user_id, :value => @user.id %>
+           <%= f.text_field :destination, placeholder: " To", id:"form" %>
          </div>
-
        <div class="col s6 push-s4">
          <a class="waves-effect waves-light btn"><%= f.submit "submit" %></a>
        </div>
-     <% end %>
+
      <% end %>
 
 

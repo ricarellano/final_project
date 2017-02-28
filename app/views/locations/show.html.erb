@@ -19,7 +19,7 @@ var directionsService = new google.maps.DirectionsService();
 
 function calcRoute() {
   var origin      = new google.maps.LatLng(<%=raw @location.latitude.to_json%>, <%= raw @location.longitude.to_json %>);
-  var destination = new google.maps.LatLng(<%=raw @destination.latitude.to_json%>, <%=raw @destination.longitude.to_json %>);
+  var destination = new google.maps.LatLng(<%=raw @location.lat.to_json%>, <%=raw @location.lon.to_json %>);
   var request = {
       origin:      origin,
       destination: destination,

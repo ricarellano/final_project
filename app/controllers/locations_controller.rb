@@ -5,47 +5,39 @@ require 'strava/api/v3'
 
   def index
     @location = Location.last
-    @destination = Destination.last
-    @distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@destination.latitude,@destination.longitude])
-    # binding.pry
+    @distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@location.lat,@location.lon])
 
-    # @location = Location.find_by_id(params[:id])
-  #   @hash = Gmaps4rails.build_markers(@location, @destination) do | location, destination, marker|
-  #   marker.lat location.latitude
-  #   marker.lng location.longitude
-  #   marker.lat destination.latitude
-  #   marker.lng destination.longitudeGam
-   #
-  #  end
-  end
-
-  def show
-    @location = Location.find_by_id(params[:id])
-  end
-
-  def create
-    @location = Location.create(location_params)
-    @destination = Destination.create(destination_params)
-    @location.destination = @destination
-    @location.save
-    redirect_to locations_path
   end
 
 
+    def show
+      @location = Location.find_by_id(params[:id])
+    end
 
 
-  def destroy
-  @location = Location.find_by_id(params[:id])
-  @location = Destination.find_by_id(params[:id]).location
-  @location.destroy
-  redirect_to current_user
-end
+    def create
+      @location = Location.new(location_params)
+      if @location.save
+        redirect_to locations_path
+      else
+        redirect_to root_path
+      end
+    end
+
+
+
+
+    def destroy
+      @location = Location.find_by_id(params[:id])
+      @location.destroy
+      redirect_to current_user
+    end
   private
 
  def location_params
-   params.require(:location).permit(:address, :user_id)
+   params.require(:location).permit(:location, :destination, :user_id, :latitude, :longitude, :lat, :lon)
  end
- def destination_params
-   params.require(:destination).permit(:address2, :user_id)
- end
+
+
+
 end

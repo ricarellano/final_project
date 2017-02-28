@@ -1,7 +1,13 @@
 class Location < ApplicationRecord
-  geocoded_by :address
-  after_validation :geocode
 
   belongs_to :user, optional: true
-  has_one :destination
+
+  geocoded_by :location
+  after_validation :geocode
+
+  def geocode
+    self.latitude , self.longitude = Geocoder.coordinates(self.location)
+    self.lat , self.lon = Geocoder.coordinates(self.destination)
+  end
+
 end

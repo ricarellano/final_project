@@ -3,12 +3,11 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/locations' => 'locations#index', as: 'locations'
-  post '/destinations' => 'destinations#create'
   post '/locations' => 'locations#create'
+  get '/locations/:id'  => 'locations#show', as: 'location'
   delete '/locations/:id' => 'locations#destroy'
-  delete '/destinations/:id' => 'destinations#destroy'
 
-  get '/directions/:id'  => 'directions#show', as: 'direction'
+
 
   get '/users' => 'users#index', as: 'users'
   get '/users/new' => 'users#new', as: 'new_user'
