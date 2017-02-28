@@ -12,8 +12,25 @@ require 'strava/api/v3'
 
 
    def add_user
-    @user = User.find_by_id(params[:id])
-    @location = Location.find_by_id(params[:id])
+     if logged_in?
+       @location = Location.find_by_id(params[:id])
+       @user = current_user
+       @user.locations << @location
+       @user.save
+
+       puts "users login"
+
+     else
+
+       if !current_user
+         redirect_to login(user)
+        puts " not login"
+       end
+     end
+
+
+      #  @user = User.find_by_id(params[:id])
+      #  @location = Location.find_by_id(params[:id])
 
    end
 
@@ -27,7 +44,8 @@ require 'strava/api/v3'
     def create
       @location = Location.new(location_params)
       if @location.save
-        @location.distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@location.lat,@location.lon])
+        cal_distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@location.lat,@location.lon])
+        @location.distance = cal_distance.round(1)
          @location.save
         redirect_to locations_path
       else

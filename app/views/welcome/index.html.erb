@@ -5,12 +5,11 @@
    <br>
    <div class="col s6 offset-s3">
 
-     <h4>Where you going?</h4>
+     <h4>Where are you going?</h4>
 
      <%= form_for @location do |f| %>
        <div>
          <%= f.text_field :location, placeholder: " From", id:"form" %>
-         <%= f.hidden_field :user_id, :value => @user.id %>
        </div>
 
 
@@ -23,7 +22,7 @@
 
      <% end %>
 
-        
+
 
    </div>
  </div>
