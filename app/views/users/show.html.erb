@@ -28,7 +28,7 @@
         <p><%=p.created_at.strftime("%b %d, %Y")%></p>
       </div>
       <div >
-          <%= link_to "delete", location_path(:id),  :class => 'waves-effect waves-light btn red delete' %></p>
+          <%= link_to "delete", location_path(p), method: :delete, :class => 'waves-effect waves-light btn red delete' %></p>
       </div>
     </div>
     <hr>
