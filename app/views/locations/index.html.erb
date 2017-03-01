@@ -3,14 +3,17 @@
 </div>
 <div id='map'></div>
 
-<div class="">
-  <p><%= @distance %></p>
-
+<div class="row">
+  <div class="col 1">
+    <p><%= @location.distance %></p>
+  </div>
+  <div class="col 12">
+    <p><%= link_to "save ", add_user_path(@location.id), method: :post,  :class => 'waves-effect waves-light btn right' %>
+  </div>
 </div>
 
 
 
-  <p><%= link_to "save ", add_user_path(@location.id), method: :post,  :class => 'waves-effect waves-light btn' %>
 
 
 

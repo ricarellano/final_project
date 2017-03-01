@@ -17,27 +17,14 @@ require 'strava/api/v3'
        @user = current_user
        @user.locations << @location
        @user.save
-
-       puts "users login"
-
-     else
-
-       if !current_user
-         redirect_to login(user)
-        puts " not login"
-       end
+        redirect_to current_user
+     else !current_user
+         redirect_to login_path
      end
-
-
-      #  @user = User.find_by_id(params[:id])
-      #  @location = Location.find_by_id(params[:id])
-
    end
 
     def show
       @location = Location.find_by_id(params[:id])
-      # cal_distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@location.lat,@location.lon])
-      # @distance = cal_distance.round(1)
     end
 
 
