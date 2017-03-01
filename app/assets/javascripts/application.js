@@ -18,3 +18,4 @@
 //= require maps
 //= require_tree .
 //= require materialize
+//= require toastr

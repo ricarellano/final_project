@@ -1,21 +1,20 @@
 <div style='width: 800px;'>
   <div id="directions" style='width: 800px; height: 400px;'></div>
 </div>
-<div id='map'></div>
 
 <div class="">
-  <p><%= @distance %></p>
-
+  <p><%= @location.distance %></p>
 </div>
+
+
+
 
 
 <!-- JavaScript Map -->
 <script type="text/javascript">
-
-
-
 var directionsDisplay = new google.maps.DirectionsRenderer();
 var directionsService = new google.maps.DirectionsService();
+
 
 function calcRoute() {
   var origin      = new google.maps.LatLng(<%=raw @location.latitude.to_json%>, <%= raw @location.longitude.to_json %>);
@@ -32,9 +31,14 @@ function calcRoute() {
   });
 }
 calcRoute();
-
+var mapStyle = [{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"saturation":"-38"},{"lightness":"-60"},{"color":"#000000"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":"100"},{"gamma":"1"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"geometry","stylers":[{"saturation":"-100"},{"lightness":"-26"},{"hue":"#ff0000"},{"gamma":"1.00"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#108eef"},{"visibility":"on"}]}];
 var handler = Gmaps.build('Google');
-handler.buildMap({ internal: {id: 'directions'}}, function(){
+handler.buildMap({ internal: {id: 'directions'},
+    provider: {
+    styles:    mapStyle
+  }
+},
+function(){
   directionsDisplay.setMap(handler.getMap());
 });
 </script>

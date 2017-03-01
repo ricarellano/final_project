@@ -1,5 +1,6 @@
 class Location < ApplicationRecord
-
+  validates :location, presence: true
+  validates :destination, presence: true
   belongs_to :user, optional: true
 
   geocoded_by :location

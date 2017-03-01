@@ -26,6 +26,8 @@ class UsersController < ApplicationController
      redirect_to new_user_path
     end
   end
+  
+    before_action :require_login, only: [:edit, :update]
 
     def edit
       user_id = params[:id]
