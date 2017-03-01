@@ -4,9 +4,6 @@ skip_before_filter :verify_authenticity_token
 
   def index
     @location = Location.last
-    # cal_distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@location.lat,@location.lon])
-    # @distance = cal_distance.round(1)
-
   end
 
 
