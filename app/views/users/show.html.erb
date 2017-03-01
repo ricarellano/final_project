@@ -22,10 +22,10 @@
 
 
   <div class="row">
-  <% @user.locations.each do |p| %>
+  <% @user.locations.each_with_index do |p, index| %>
       <div class="col s3 route_col z-depth-5">
         <div class="row route_text center-align">
-          <p>Route</p>
+          <p>Route <%="#{index}"%></p>
         </div>
         <div class="row route_inf">
           <strong>Saved:</strong>
@@ -39,7 +39,7 @@
         </div>
           <div class="row link_route">
             <div class="col s0">
-              <p><%= link_to "View Route", location_path(p) %>
+              <p style="text-decoration: underline;"><%= link_to "View Route", location_path(p) %>
             </div>
             <div class="col s5 right-align">
               <p><%= link_to '<i class="material-icons">delete</i>'.html_safe, location_path(p), method: :delete %></p></p>

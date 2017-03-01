@@ -1,29 +1,30 @@
+<div class="background_image">
 
-<div class="container">
- <div class="row">
-   <br>
-   <br>
-   <div class="col s6 offset-s3">
+  <div class="container">
+    <div class="row">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="col s6 offset-s3">
 
-     <h4>Where are you going?</h4>
+        <h4 style="color: white;">Where are you going?</h4>
 
-     <%= form_for @location do |f| %>
-       <div>
-         <input placeholder=" From" id="location" type="text" name="location[location]">
-       </div>
-
-
-         <div>
-           <input placeholder=" To" id="destination" type="text" name="location[destination]">
-         </div>
-       <div class="col s6 push-s4">
-         <a class="waves-effect waves-light btn"><%= f.submit "submit" %></a>
-       </div>
-
-     <% end %>
-
-   </div>
- </div>
+        <%= form_for @location do |f| %>
+        <div>
+          <input placeholder=" From" id="location" type="text" name="location[location]">
+        </div>
+        <div>
+          <input placeholder=" To" id="destination" type="text" name="location[destination]">
+        </div>
+        <div class="col s6 push-s4">
+          <a class="waves-effect waves-light btn"><%= f.submit "submit" %></a>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
 
