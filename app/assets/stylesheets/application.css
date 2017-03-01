@@ -21,3 +21,36 @@
    position: relative;
    width: 100%;
  }
+
+ .route_col {
+   background-color: #ddd;
+   margin:20px;
+   margin-bottom: 0px;
+ }
+
+ .route_text {
+   background-color: #0086ff;
+   margin-top:  0px;
+   color: white;
+   font-size: 20px;
+ }
+
+.route_inf {
+  padding-left: 15px;
+}
+
+.margin {
+  margin-top:  0px;
+}
+
+.link_route {
+  background-color: #d0d0d0;
+}
+
+.material-icons{
+  color: #757575;
+}
+
+.material-icons:hover{
+  color: red;
+}

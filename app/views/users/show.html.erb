@@ -21,15 +21,36 @@
   </div>
 
 
+  <div class="row">
   <% @user.locations.each do |p| %>
-    <div class="row">
-      <div class="col s10 offset-s1">
-        <p><%=p.created_at.strftime("%b %d, %Y")%></p>
-        <p><strong>From: <%= "#{p.location}" %></strong><strong> To: <%= "#{p.destination}" %></strong> <span><%="#{p.distance} Miles"%></span> <spam><%= link_to "   Route", location_path(p) %></spam>
+      <div class="col s3 route_col z-depth-5">
+        <div class="row route_text center-align">
+          <p>Route</p>
+        </div>
+        <div class="row route_inf">
+          <strong>Saved:</strong>
+          <p class="margin"><%=p.created_at.strftime("%b %d, %Y")%></p>
+          <strong>From: </strong>
+          <p class="margin"> <%= "#{p.location}" %></p>
+          <strong> To: </strong>
+          <p class="margin"><%= "#{p.destination}" %></p>
+          <strong>Miles:</strong>
+          <p class="margin"><%="#{p.distance}"%></p>
+        </div>
+          <div class="row link_route">
+            <div class="col s0">
+              <p><%= link_to "View Route", location_path(p) %>
+            </div>
+            <div class="col s5 right-align">
+              <p><%= link_to '<i class="material-icons">delete</i>'.html_safe, location_path(p), method: :delete %></p></p>
+            </div>
+          </div>
       </div>
-      <div >
-        <%= link_to "delete", location_path(p), method: :delete, :class => 'waves-effect waves-light btn red delete' %></p>
-      </div>
-    </div>
-    <hr>
+
+
+
+
+
+
     <% end %>
+  </div>
