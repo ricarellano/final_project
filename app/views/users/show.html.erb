@@ -36,7 +36,12 @@
           <p class="margin"><%= "#{p.destination}" %></p>
           <strong>Miles:</strong>
           <p class="margin"><%="#{p.distance}"%></p>
+          <strong>Calories:</strong>
+          <p class="margin"><%="#{p.calories}"%></p>
+          <strong>Food:</strong>
+          <p class="margin"><%="#{p.food}"%></p>
         </div>
+
           <div class="row link_route">
             <div class="col s0">
               <p style="text-decoration: underline;"><%= link_to "View Route", location_path(p) %>
