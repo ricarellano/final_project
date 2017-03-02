@@ -5,19 +5,19 @@
 
 
 
-<div class="row container_result">
-  <div class="col s3">
+<div class="row container_result z-depth-5">
+  <div class=>
     <strong>Miles:</strong>
     <p class="margin"><%= @location.distance %></p>
     <strong>Calories:</strong>
-
     <p class="margin"><%= @location.calories %></p>
-
+    <strong>Guilty Pleasure:</strong>
+    <p class="margin"><%= @location.food %></p>
   </div>
 </div>
 
   <div class="save">
-     <p><%= link_to "save ", add_user_path(@location.id), method: :post,  :class => 'waves-effect waves-light btn right' %>
+     <p><%= link_to "save ", add_user_path(@location.id), method: :post,  :class => 'waves-effect waves-light btn-large right' %>
   </div>
 
 
@@ -46,7 +46,7 @@ function calcRoute() {
   });
 }
 calcRoute();
-var mapStyle = [{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"saturation":"-38"},{"lightness":"-60"},{"color":"#000000"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":"100"},{"gamma":"1"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"geometry","stylers":[{"saturation":"-100"},{"lightness":"-26"},{"hue":"#ff0000"},{"gamma":"1.00"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#108eef"},{"visibility":"on"}]}];
+var mapStyle = [{"featureType":"administrative.neighborhood","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"landscape.natural","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#b1b1f2"}]},{"featureType":"poi.attraction","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.government","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#66ff00"},{"saturation":"75"},{"lightness":"12"}]},{"featureType":"poi.park","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.school","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.sports_complex","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}];
 var handler = Gmaps.build('Google');
 handler.buildMap({ internal: {id: 'directions'},
     provider: {
