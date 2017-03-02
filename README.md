@@ -1,6 +1,6 @@
 # Cycling Routes
 
-This app is for cyclist people who want to see their distances in miles, calories burned and save favorite routes in their profile.
+This app is for users who enjoy cycling and want to see their distances in miles, calories burned and save favorite routes in their profile.
 
 ## Build with
 * Ruby
