@@ -14,9 +14,6 @@ This app is for cyclist people who want to see their distances in miles, calorie
 * Once login user can save their favorite route.
 
 
-## Wireframe
-
-
 
 
 
