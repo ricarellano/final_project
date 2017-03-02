@@ -2,7 +2,7 @@
 
 This app is for users who enjoy cycling and want to see their distance in miles, calories burned and save favorite routes in their profile.
 
-## Build with
+## Built with
 * Ruby
 * Rails
 * Materialize
