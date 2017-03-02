@@ -38,9 +38,9 @@ skip_before_filter :verify_authenticity_token
         elsif @location.calories < 128 * 2
            @location.food = "2 Donuts"
         elsif @location.calories < 128 * 3
-          @location.food = "Burguer"
-        elsif @location.calories < 128 * 4
           @location.food = "Burguer + Beer"
+        elsif @location.calories < 128 * 4
+          @location.food = "Burguer + Fries + Beer"
        end
 
           @location.save
