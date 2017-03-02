@@ -10,8 +10,8 @@ This app is for cyclist people who want to see their distances in miles, calorie
 
 
 ## User stories
-User can see de cycling map route, calories burned and guilty pleasure without login.
-Once login user can save their favorite route.
+* User can see de cycling map route, calories burned and guilty pleasure without login.
+* Once login user can save their favorite route.
 
 
 ## Wireframe
