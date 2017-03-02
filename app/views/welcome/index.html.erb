@@ -9,7 +9,7 @@
       <br>
       <div class="col s6 offset-s3">
 
-        <h4 style="color: white;">Where are you going?</h4>
+        <h4 class="center-align" style="color: white;">Where are you going?</h4>
 
         <%= form_for @location do |f| %>
         <div>
@@ -19,7 +19,7 @@
           <input placeholder=" To" id="destination" type="text" name="location[destination]">
         </div>
         <div class="col s6 push-s4">
-          <a class="waves-effect waves-light btn"><%= f.submit "submit" %></a>
+          <a class="waves-effect waves-light btn"><%= f.submit "start now!" %></a>
         </div>
         <% end %>
       </div>

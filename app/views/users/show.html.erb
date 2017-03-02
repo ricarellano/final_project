@@ -3,19 +3,23 @@
   <h4>Welcome, <%= @user.first_name %>!</h4>
   <hr>
   <div class="row ">
-    <div class="col m4 profile">
+    <div class="col s3 profile">
       <ul>
+      <li><strong>Name:</strong> &nbsp; <%= @user.first_name  %></li>
       <li><strong>Email:</strong> &nbsp; <%= @user.email %></li>
-      <li><strong>Member Since:</strong> &nbsp; <%= @user.created_at.strftime("%b %d, %Y") %></li>
+      <li><strong>Member Since:</strong> &nbsp; <%= @user.created_at.to_date %></li>
     </ul>
-
     <% if current_user == @user %>
     <p class="left-align"><%= link_to "edit ",  edit_user_path(@user), :class => 'waves-effect waves-light btn ' %></p>
     <% end %>
+    </div>
+    <div class="col s8 back_user_img z-depth-5">
 
     </div>
   </div>
-
+  <br>
+<h4>Your favorite routes</h4>
+<hr>
 <!-- Route column -->
   <div class="row">
   <% @user.locations.each_with_index do |p, index| %>
