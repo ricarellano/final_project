@@ -21,7 +21,7 @@ This app is for users who enjoy cycling and want to see their distance in miles,
 
 <img src="http://i.imgur.com/NkJ9Mmu.jpg" width="600">
 
-
+## Code I'm proud of
 
 ```
   geocoded_by :location
