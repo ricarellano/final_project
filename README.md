@@ -1,24 +1,28 @@
-# README
+# Cycling Routes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is for users who enjoy cycling and want to see their distance in miles, calories burned and save favorite routes in their profile.
 
-Things you may want to cover:
+## Build with
+* Ruby
+* Rails
+* Materialize
+* gmaps4rails gem
 
-* Ruby version
 
-* System dependencies
+## User stories
+* User can see the cycling route map, calories burned and guilty pleasure without login.
+* Once login user can save their favorite route.
 
-* Configuration
+## Wireframes
 
-* Database creation
+<img src="http://i.imgur.com/d93UNa3.jpg" width="600">
 
-* Database initialization
+<img src="http://i.imgur.com/AG1ZCLP.jpg" width="600">
 
-* How to run the test suite
+<img src="http://i.imgur.com/NkJ9Mmu.jpg" width="600">
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+
+
+
