@@ -15,7 +15,7 @@ This app is for users who enjoy cycling and want to see their distance in miles,
 
 ## Wireframes
 
-<img src="http://imgur.com/d93UNa3" width="600">
+<img src="http://i.imgur.com/d93UNa3.jpg" width="600">
 
 
 
