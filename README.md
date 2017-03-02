@@ -13,7 +13,9 @@ This app is for users who enjoy cycling and want to see their distance in miles,
 * User can see the cycling route map, calories burned and guilty pleasure without login.
 * Once login user can save their favorite route.
 
+## Wireframes
 
+<img src="http://imgur.com/d93UNa3" width="600">
 
 
 
