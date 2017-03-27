@@ -23,36 +23,17 @@ skip_before_filter :verify_authenticity_token
       @location = Location.find_by_id(params[:id])
     end
 
-
     def create
       @location = Location.new(location_params)
       if @location.save
-        cal_distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@location.lat,@location.lon])
-        @location.distance = cal_distance.round(1)
-        time = @location.distance / 13
-        @location.calories = 8 * 75 * time
-        calories = @location.calories
-
-        if calories < 128
-          @location.food = "1 Donut"
-        elsif @location.calories < 128 * 2
-           @location.food = "2 Donuts"
-        elsif @location.calories < 128 * 3
-          @location.food = "Burguer + Beer"
-        elsif @location.calories < 128 * 4
-          @location.food = "Burguer + Fries + Beer"
-       end
-
-          @location.save
-
+        Location.calc_distance(@location)
+        Location.calories(@location)
+        Location.guilty(@location)
         redirect_to locations_path
       else
         redirect_to root_path
       end
     end
-
-
-
 
     def destroy
       @location = Location.find_by_id(params[:id])
@@ -64,7 +45,5 @@ skip_before_filter :verify_authenticity_token
  def location_params
    params.require(:location).permit(:location, :destination, :user_id, :latitude, :longitude, :lat, :lon)
  end
-
-
 
 end
