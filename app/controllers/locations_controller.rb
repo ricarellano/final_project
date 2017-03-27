@@ -28,10 +28,11 @@ skip_before_filter :verify_authenticity_token
       @location = Location.new(location_params)
       if @location.save
         Location.calc_distance(@location)
+        Location.calories(@location)
         # cal_distance = Geocoder::Calculations.distance_between([@location.latitude,@location.longitude], [@location.lat,@location.lon])
         # @location.distance = cal_distance.round(1)
-        time = @location.distance / 13
-        @location.calories = 8 * 75 * time
+        # time = @location.distance / 13
+        # @location.calories = 8 * 75 * time
         calories = @location.calories
 
         if calories < 128

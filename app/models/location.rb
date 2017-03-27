@@ -17,4 +17,9 @@ class Location < ApplicationRecord
     location.save
   end
 
+  def self.calories (location)
+    time = location.distance / 13
+    location.calories = 8 * 75 * time
+    location.save
+  end
 end
